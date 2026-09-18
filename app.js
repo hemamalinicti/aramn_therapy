@@ -227,6 +227,30 @@ function initBookingPageWizard() {
   prevBtn?.addEventListener('click', () => handleBookingPrev('page'));
 
   updateBookingWizardStep(1, 'page');
+  updateSummaryDisplay();
+}
+
+function updateSummaryDisplay() {
+  const sumService = document.getElementById('pageSummaryService') || document.getElementById('summaryService');
+  const sumDateTime = document.getElementById('pageSummaryDateTime') || document.getElementById('summaryDateTime');
+  const sumClient = document.getElementById('pageSummaryClient') || document.getElementById('summaryClient');
+
+  if (sumService) {
+    sumService.textContent = bookingData.service || 'Deep Tissue Body Therapy';
+  }
+  if (sumDateTime) {
+    const formattedDate = bookingData.date ? bookingData.date : 'Tomorrow';
+    sumDateTime.textContent = `${formattedDate} at ${bookingData.time || '10:00 AM'}`;
+  }
+  if (sumClient) {
+    if (bookingData.name && bookingData.email) {
+      sumClient.textContent = `${bookingData.name} (${bookingData.email})`;
+    } else if (bookingData.name) {
+      sumClient.textContent = bookingData.name;
+    } else {
+      sumClient.textContent = 'Gents Client';
+    }
+  }
 }
 
 function setupBookingInputs(context = 'modal') {
@@ -252,6 +276,7 @@ function setupBookingInputs(context = 'modal') {
         icon.classList.add('opacity-100');
       }
       bookingData.service = card.getAttribute('data-value') || bookingData.service;
+      updateSummaryDisplay();
     });
   });
 
@@ -261,6 +286,7 @@ function setupBookingInputs(context = 'modal') {
       formatChoices.forEach(b => b.classList.remove('bg-emerald-dark', 'text-gold'));
       btn.classList.add('bg-emerald-dark', 'text-gold');
       bookingData.format = btn.innerText;
+      updateSummaryDisplay();
     });
   });
 
@@ -270,6 +296,7 @@ function setupBookingInputs(context = 'modal') {
       timeSlots.forEach(b => b.classList.remove('bg-emerald-dark', 'text-gold', 'border-gold'));
       btn.classList.add('bg-emerald-dark', 'text-gold', 'border-gold');
       bookingData.time = btn.innerText;
+      updateSummaryDisplay();
     });
   });
 
@@ -281,6 +308,7 @@ function setupBookingInputs(context = 'modal') {
     bookingData.date = dateInput.value;
     dateInput.addEventListener('change', (e) => {
       bookingData.date = e.target.value;
+      updateSummaryDisplay();
     });
   }
 }
@@ -290,8 +318,10 @@ function handleBookingNext(context = 'modal') {
   
   if (currentBookingStep === 1) {
     updateBookingWizardStep(2, context);
+    updateSummaryDisplay();
   } else if (currentBookingStep === 2) {
     updateBookingWizardStep(3, context);
+    updateSummaryDisplay();
   } else if (currentBookingStep === 3) {
     const nameEl = document.getElementById(`${prefix ? prefix : 'booking'}Name`);
     const emailEl = document.getElementById(`${prefix ? prefix : 'booking'}Email`);
@@ -311,14 +341,7 @@ function handleBookingNext(context = 'modal') {
     bookingData.phone = phoneEl?.value.trim() || 'N/A';
     bookingData.notes = notesEl?.value.trim() || 'None';
 
-    const sumService = document.getElementById(context === 'page' ? 'pageSummaryService' : 'summaryService');
-    const sumDateTime = document.getElementById(context === 'page' ? 'pageSummaryDateTime' : 'summaryDateTime');
-    const sumClient = document.getElementById(context === 'page' ? 'pageSummaryClient' : 'summaryClient');
-
-    if (sumService) sumService.textContent = bookingData.service;
-    if (sumDateTime) sumDateTime.textContent = `${bookingData.date || 'Tomorrow'} at ${bookingData.time}`;
-    if (sumClient) sumClient.textContent = `${bookingData.name} (${bookingData.email})`;
-
+    updateSummaryDisplay();
     updateBookingWizardStep(4, context);
   } else if (currentBookingStep === 4) {
     if (context === 'modal') {
