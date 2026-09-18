@@ -1008,22 +1008,22 @@ function initFloatingWidget() {
 
   const widget = document.createElement('div');
   widget.id = 'floatingContactWidget';
-  widget.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-center animate-fade-in';
+  widget.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 items-center animate-fade-in';
   widget.innerHTML = `
     <!-- Call Floating Button -->
-    <a href="tel:+919876543210" class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-emerald-dark text-gold border-2 border-gold/70 flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-gold hover:text-emerald-dark transition-all duration-300 group relative" title="Call Us Direct (+91 9876543210)" aria-label="Call Us Direct">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+    <a href="tel:+919876543210" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-emerald-dark text-gold border border-gold/70 flex items-center justify-center shadow-xl hover:scale-105 hover:bg-gold hover:text-emerald-dark transition-all duration-300 group relative" title="Call Us Direct (+91 9876543210)" aria-label="Call Us Direct">
+      <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
         <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.4-.1-.8 0-1.1.3l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.3-1.1-.4-1.2-.6-2.4-.6-3.6 0-.6-.5-1-1-1H3.5c-.6 0-1 .4-1 1C2.5 13.9 10.1 21.5 19.5 21.5c.6 0 1-.4 1-1v-4c0-.5-.4-1-1-1z"/>
       </svg>
-      <span class="absolute right-14 bg-emerald-dark text-gold text-xs font-bold px-2.5 py-1 rounded-lg border border-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg pointer-events-none">Call Now</span>
+      <span class="absolute right-13 bg-emerald-dark text-gold text-xs font-bold px-2 py-0.5 rounded-lg border border-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-md pointer-events-none">Call Now</span>
     </a>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#25D366] text-white border-2 border-white/30 flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-[#20ba5a] transition-all duration-300 group relative" title="WhatsApp Chat" aria-label="WhatsApp Chat">
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#25D366] text-white border border-white/30 flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#20ba5a] transition-all duration-300 group relative" title="WhatsApp Chat" aria-label="WhatsApp Chat">
+      <svg class="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.285-.143-1.689-.834-1.951-.929-.262-.095-.453-.143-.645.143-.19.285-.738.929-.905 1.119-.167.19-.333.214-.618.071-.285-.143-1.205-.444-2.296-1.417-.848-.757-1.421-1.692-1.587-1.977-.167-.285-.018-.439.125-.581.129-.128.285-.333.428-.5.143-.167.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.645-1.554-.883-2.127-.233-.558-.47-.482-.645-.491l-.547-.01c-.19 0-.499.071-.761.357-.262.285-1.001.977-1.001 2.385 0 1.407 1.025 2.766 1.168 2.956.143.19 2.019 3.084 4.891 4.324.684.295 1.218.471 1.634.603.687.218 1.312.187 1.806.114.552-.082 1.689-.69 1.927-1.357.238-.667.238-1.238.167-1.357-.07-.119-.261-.19-.546-.333z"/>
       </svg>
-      <span class="absolute right-14 bg-emerald-dark text-gold text-xs font-bold px-2.5 py-1 rounded-lg border border-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg pointer-events-none">WhatsApp Us</span>
+      <span class="absolute right-13 bg-emerald-dark text-gold text-xs font-bold px-2 py-0.5 rounded-lg border border-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-md pointer-events-none">WhatsApp Us</span>
     </a>
   `;
   document.body.appendChild(widget);
