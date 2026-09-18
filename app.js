@@ -198,11 +198,27 @@ function initBookingPageWizard() {
   const pageContainer = document.getElementById('bookingPageContainer');
   if (!pageContainer) return;
 
+  setupBookingInputs('page');
+
   const urlParams = new URLSearchParams(window.location.search);
   const serviceParam = urlParams.get('service');
-  if (serviceParam) bookingData.service = serviceParam;
-
-  setupBookingInputs('page');
+  if (serviceParam) {
+    bookingData.service = serviceParam;
+    const choices = document.querySelectorAll('.page-service-choice');
+    choices.forEach(card => {
+      const val = card.getAttribute('data-value');
+      const icon = card.querySelector('.service-check-icon');
+      if (val === serviceParam) {
+        card.classList.add('border-gold', 'bg-sand-card', 'border-2', 'selected', 'shadow-md');
+        card.classList.remove('border-sand-border');
+        if (icon) { icon.classList.remove('opacity-0'); icon.classList.add('opacity-100'); }
+      } else {
+        card.classList.remove('border-gold', 'bg-sand-card', 'border-2', 'selected', 'shadow-md');
+        card.classList.add('border-sand-border');
+        if (icon) { icon.classList.add('opacity-0'); icon.classList.remove('opacity-100'); }
+      }
+    });
+  }
 
   const nextBtn = document.getElementById('pageBookingNextBtn');
   const prevBtn = document.getElementById('pageBookingPrevBtn');
@@ -219,8 +235,22 @@ function setupBookingInputs(context = 'modal') {
   const serviceChoices = document.querySelectorAll(`.${prefix ? prefix + '-' : ''}service-choice`);
   serviceChoices.forEach(card => {
     card.addEventListener('click', () => {
-      serviceChoices.forEach(c => c.classList.remove('border-gold', 'bg-sand-card'));
-      card.classList.add('border-gold', 'bg-sand-card');
+      serviceChoices.forEach(c => {
+        c.classList.remove('border-gold', 'bg-sand-card', 'border-2', 'selected', 'shadow-md');
+        c.classList.add('border-sand-border');
+        const icon = c.querySelector('.service-check-icon');
+        if (icon) {
+          icon.classList.add('opacity-0');
+          icon.classList.remove('opacity-100');
+        }
+      });
+      card.classList.remove('border-sand-border');
+      card.classList.add('border-gold', 'bg-sand-card', 'border-2', 'selected', 'shadow-md');
+      const icon = card.querySelector('.service-check-icon');
+      if (icon) {
+        icon.classList.remove('opacity-0');
+        icon.classList.add('opacity-100');
+      }
       bookingData.service = card.getAttribute('data-value') || bookingData.service;
     });
   });
@@ -237,8 +267,8 @@ function setupBookingInputs(context = 'modal') {
   const timeSlots = document.querySelectorAll(`.${prefix ? prefix + '-' : ''}time-slot-btn`);
   timeSlots.forEach(btn => {
     btn.addEventListener('click', () => {
-      timeSlots.forEach(b => b.classList.remove('bg-emerald-dark', 'text-gold'));
-      btn.classList.add('bg-emerald-dark', 'text-gold');
+      timeSlots.forEach(b => b.classList.remove('bg-emerald-dark', 'text-gold', 'border-gold'));
+      btn.classList.add('bg-emerald-dark', 'text-gold', 'border-gold');
       bookingData.time = btn.innerText;
     });
   });
@@ -281,16 +311,15 @@ function handleBookingNext(context = 'modal') {
     bookingData.phone = phoneEl?.value.trim() || 'N/A';
     bookingData.notes = notesEl?.value.trim() || 'None';
 
-    const sumService = document.getElementById(`${prefix ? prefix : 'summary'}Service`);
-    const sumDateTime = document.getElementById(`${prefix ? prefix : 'summary'}DateTime`);
-    const sumClient = document.getElementById(`${prefix ? prefix : 'summary'}Client`);
+    const sumService = document.getElementById(context === 'page' ? 'pageSummaryService' : 'summaryService');
+    const sumDateTime = document.getElementById(context === 'page' ? 'pageSummaryDateTime' : 'summaryDateTime');
+    const sumClient = document.getElementById(context === 'page' ? 'pageSummaryClient' : 'summaryClient');
 
-    if (sumService) sumService.textContent = `${bookingData.service} (${bookingData.format})`;
-    if (sumDateTime) sumDateTime.textContent = `${bookingData.date} at ${bookingData.time}`;
+    if (sumService) sumService.textContent = bookingData.service;
+    if (sumDateTime) sumDateTime.textContent = `${bookingData.date || 'Tomorrow'} at ${bookingData.time}`;
     if (sumClient) sumClient.textContent = `${bookingData.name} (${bookingData.email})`;
 
     updateBookingWizardStep(4, context);
-    showToast('Therapy Session Booked! Confirmation sent to your email.', 'success');
   } else if (currentBookingStep === 4) {
     if (context === 'modal') {
       const modal = document.getElementById('bookingModal');
