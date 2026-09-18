@@ -531,24 +531,57 @@ p {
 }
 
 /* Selected Active State with Luxury Emerald & Gold Glow */
-.quiz-option-card.selected, .quiz-option.selected {
+.quiz-option-card.selected, .quiz-option.selected, .page-service-choice.selected {
   background: linear-gradient(135deg, #091D17 0%, #0D2C23 60%, #144034 100%) !important;
   border-color: #D4AF37 !important;
   box-shadow: 0 18px 40px rgba(9, 29, 23, 0.4), 0 0 30px rgba(212, 175, 55, 0.45), inset 0 0 20px rgba(212, 175, 55, 0.15) !important;
-  transform: translateY(-4px) scale(1.03) !important;
+  transform: translateY(-4px) scale(1.02) !important;
 }
 
-.quiz-option-card.selected span, .quiz-option-card.selected label {
+.quiz-option-card.selected *, 
+.quiz-option.selected *,
+.page-service-choice.selected * {
+  color: #FFFFFF;
+}
+
+.quiz-option-card.selected span, 
+.quiz-option-card.selected label,
+.quiz-option.selected span,
+.quiz-option.selected label,
+.page-service-choice.selected span,
+.page-service-choice.selected label {
   color: #FFFFFF !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.quiz-option-card.selected .quiz-icon-badge {
+.quiz-option-card.selected .text-slate-text,
+.quiz-option.selected .text-slate-text,
+.page-service-choice.selected .text-slate-text {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.quiz-option-card.selected .text-slate-muted,
+.quiz-option.selected .text-slate-muted,
+.page-service-choice.selected .text-slate-muted {
+  color: #F3E5AB !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-option-card.selected .quiz-icon-badge,
+.quiz-option.selected .quiz-icon-badge {
   background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
   color: #091D17 !important;
   border-color: #F5E59B !important;
   transform: scale(1.15) !important;
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.85) !important;
+}
+
+.quiz-option-card.selected .service-check-icon,
+.quiz-option.selected .service-check-icon,
+.page-service-choice.selected .service-check-icon {
+  color: #D4AF37 !important;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.9));
 }
 
 /* Pop-in bounce animation for selected check badge */

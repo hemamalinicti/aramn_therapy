@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initFloatingWidget();
 });
 
+function getLocalDateString(dateObj = new Date()) {
+  const year = dateObj.getFullYear();
+  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+  const day = String(dateObj.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 /* ----------------------------------------------------
    Hero Circle 2D Collision Physics:
    Inner Circle bounces randomly when hitting Outer Circle curve
@@ -303,11 +310,19 @@ function setupBookingInputs(context = 'modal') {
 
   const dateInput = document.getElementById(`${prefix ? prefix : 'booking'}Date`);
   if (dateInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    dateInput.value = tomorrow.toISOString().split('T')[0];
+    const todayStr = getLocalDateString();
+    dateInput.setAttribute('min', todayStr);
+
+    if (!dateInput.value || dateInput.value < todayStr) {
+      dateInput.value = todayStr;
+    }
     bookingData.date = dateInput.value;
+
     dateInput.addEventListener('change', (e) => {
+      if (e.target.value < todayStr) {
+        showToast('Past dates cannot be selected. Please select today or a future date.', 'error');
+        e.target.value = todayStr;
+      }
       bookingData.date = e.target.value;
       updateSummaryDisplay();
     });
@@ -321,6 +336,13 @@ function handleBookingNext(context = 'modal') {
     updateBookingWizardStep(2, context);
     updateSummaryDisplay();
   } else if (currentBookingStep === 2) {
+    const dateInput = document.getElementById(`${prefix ? prefix : 'booking'}Date`);
+    const todayStr = getLocalDateString();
+    if (dateInput && dateInput.value < todayStr) {
+      showToast('Past dates cannot be booked. Please select today or a future date.', 'error');
+      dateInput.value = todayStr;
+      return;
+    }
     updateBookingWizardStep(3, context);
     updateSummaryDisplay();
   } else if (currentBookingStep === 3) {
