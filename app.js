@@ -790,8 +790,20 @@ function initContactForm() {
       return;
     }
 
-    form.reset();
-    showToast('Thank you! Your message has been sent to Aran Therapy Center.', 'success');
+    const whatsappMessage = `*New Direct Inquiry - Aran Therapy Center*\n\n` +
+      `👤 *Name:* ${name}\n` +
+      `📧 *Email:* ${email}\n` +
+      `💬 *Message:* ${message}`;
+
+    const phoneNumber = '919876543210';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    showToast('Redirecting to WhatsApp with your inquiry details...', 'success');
+
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+      form.reset();
+    }, 600);
   });
 }
 
