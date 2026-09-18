@@ -1,0 +1,724 @@
+/* Aran Therapy Center - Luxury Emerald & Gold Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-emerald-dark: #091D17;
+  --color-emerald-deep: #0D2C23;
+  --color-emerald-mid: #144034;
+  --color-emerald-light: #1D5445;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F3E5AB;
+  --color-gold-dark: #AA820A;
+  --color-gold-border: rgba(212, 175, 55, 0.35);
+  --color-sand-bg: #F9F8F3;
+  --color-sand-card: #F3F0E6;
+  --color-sand-border: #E2DDD0;
+  --color-slate-text: #1B2421;
+  --color-slate-muted: #4A5B55;
+  --color-white: #FFFFFF;
+  --font-heading: 'Cinzel', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --shadow-gold: 0 10px 30px -5px rgba(212, 175, 55, 0.2);
+  --shadow-card: 0 15px 35px rgba(9, 29, 23, 0.08);
+  --shadow-elevated: 0 25px 50px -12px rgba(9, 29, 23, 0.25);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base Settings */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-sand-bg);
+  background-image: url('assets/images/bg_light_texture.jpg');
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-slate-text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark Emerald Background Texture for Hero Headers, Dark Sections & Footer */
+.bg-emerald-dark, section.bg-emerald-dark, footer.bg-emerald-dark {
+  background-color: #091D17;
+  background-image: radial-gradient(circle at 50% 0%, rgba(20, 64, 52, 0.7) 0%, rgba(9, 29, 23, 0.96) 80%), url('assets/images/bg_dark_emerald.jpg');
+  background-position: center top;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-heading);
+  text-wrap: balance;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color-emerald-deep);
+  color: var(--color-gold-light);
+}
+
+/* Glassmorphism Navigation */
+.navbar-glass {
+  background: rgba(9, 29, 23, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-gold-border);
+  transition: var(--transition-smooth);
+}
+
+.navbar-scrolled {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(9, 29, 23, 0.98);
+}
+
+/* Gold Badge & Borders */
+.gold-badge {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: #091D17;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E59B 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid var(--color-gold-border);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #144034 0%, #091D17 100%);
+  color: var(--color-gold-light);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+  border: 1px solid var(--color-gold);
+  box-shadow: var(--shadow-gold);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+  color: #091D17;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--color-sand-card);
+  color: var(--color-emerald-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+  border: 1px solid var(--color-sand-border);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .btn-secondary {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728);
+  color: #091D17;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-gold);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .btn-gold {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+}
+
+/* Header Compact CTA Button (32px Small Icon on Mobile) */
+.btn-header-cta {
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728);
+  color: #091D17;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1px solid rgba(245, 229, 155, 0.5);
+}
+
+.btn-header-cta:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.55);
+}
+
+@media (min-width: 640px) {
+  .btn-header-cta {
+    width: auto;
+    height: auto;
+    padding: 0.55rem 1.25rem !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    gap: 0.5rem;
+  }
+}
+
+/* ====================================================
+   REAL WORKING ANIMATIONS FOR ICONS
+==================================================== */
+
+/* 1. Pulse / Heartbeat Activity Icon (Deep Tissue Therapy) */
+.icon-animate-pulse {
+  animation: ecgPulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  display: inline-block;
+  will-change: transform, filter;
+}
+
+@keyframes ecgPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
+  }
+  12% {
+    transform: scale(1.22);
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.95));
+  }
+  24% {
+    transform: scale(0.94);
+  }
+  36% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.75));
+  }
+  48% {
+    transform: scale(1);
+  }
+}
+
+/* 2. Floating Swaying Feather Icon (Swedish Relaxation) */
+.icon-animate-feather {
+  animation: featherFloat 4s ease-in-out infinite alternate;
+  display: inline-block;
+  will-change: transform;
+}
+
+@keyframes featherFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-6px) rotate(-10deg);
+  }
+  65% {
+    transform: translateY(-2px) rotate(8deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(-5deg);
+  }
+}
+
+/* 3. Flickering & Glowing Thermal Flame Icon (Somatic Recovery) */
+.icon-animate-flame {
+  animation: flameFlicker 2.2s ease-in-out infinite;
+  display: inline-block;
+  will-change: transform, filter;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.5));
+  }
+  20% {
+    transform: scale(1.15) translateY(-3px) rotate(-4deg);
+    filter: drop-shadow(0 0 14px rgba(255, 185, 0, 0.95));
+  }
+  45% {
+    transform: scale(0.95) translateY(1px) rotate(3deg);
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+  }
+  70% {
+    transform: scale(1.1) translateY(-2px) rotate(-2deg);
+    filter: drop-shadow(0 0 11px rgba(255, 200, 50, 0.85));
+  }
+}
+
+/* 4. Compass Rotation & Search Icon (Body Care Assessment) */
+.icon-animate-compass {
+  animation: compassSearch 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  display: inline-block;
+  will-change: transform;
+}
+
+@keyframes compassSearch {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(45deg);
+  }
+  40% {
+    transform: rotate(-35deg);
+  }
+  60% {
+    transform: rotate(90deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sparkles Twinkle Icon Animation */
+.icon-animate-sparkle {
+  animation: sparkleTwinkle 2.5s ease-in-out infinite alternate;
+  display: inline-block;
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25) rotate(20deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.9));
+  }
+  100% {
+    transform: scale(0.95) rotate(-15deg);
+    opacity: 0.85;
+  }
+}
+
+/* Faster active feedback on card hover */
+.card-hover:hover .icon-animate-pulse {
+  animation-duration: 1.1s;
+}
+.card-hover:hover .icon-animate-flame {
+  animation-duration: 1.3s;
+}
+.card-hover:hover .icon-animate-feather {
+  animation-duration: 2s;
+}
+.card-hover:hover .icon-animate-compass {
+  animation-duration: 2.5s;
+}
+
+/* Card Styling */
+.card-hover {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--color-sand-border);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-gold);
+}
+
+/* Instagram Post Grid Card */
+.insta-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 29, 23, 0.85);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  transition: var(--transition-smooth);
+}
+
+.insta-card:hover img {
+  transform: scale(1.08);
+}
+
+.insta-card:hover .insta-overlay {
+  opacity: 1;
+}
+
+/* Modal Overlay & Animation */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 29, 23, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--color-sand-bg);
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-elevated);
+  transform: scale(0.95) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Quiz Option Cards - Rich Colors & Vibrant Interactive Animations */
+.quiz-option-card, .quiz-option {
+  position: relative;
+  border: 2px solid var(--color-sand-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 0.75rem;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F9F8F3 100%);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(9, 29, 23, 0.03);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .quiz-option-card, .quiz-option {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.quiz-option-card:hover, .quiz-option:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--color-gold);
+  background: linear-gradient(145deg, #FFFFFF 0%, #F5F0E1 100%);
+  box-shadow: 0 14px 30px -5px rgba(212, 175, 55, 0.28);
+}
+
+.quiz-option-card .quiz-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(9, 29, 23, 0.05);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  color: var(--color-emerald-dark);
+  transition: all 0.35s ease;
+}
+
+@media (min-width: 640px) {
+  .quiz-option-card .quiz-icon-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    margin-bottom: 0.85rem;
+  }
+}
+
+.quiz-option-card:hover .quiz-icon-badge {
+  background: var(--color-emerald-dark);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: scale(1.12) rotate(4deg);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Selected Active State with Luxury Emerald & Gold Glow */
+.quiz-option-card.selected, .quiz-option.selected {
+  background: linear-gradient(135deg, #091D17 0%, #0D2C23 60%, #144034 100%) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 18px 40px rgba(9, 29, 23, 0.4), 0 0 30px rgba(212, 175, 55, 0.45), inset 0 0 20px rgba(212, 175, 55, 0.15) !important;
+  transform: translateY(-4px) scale(1.03) !important;
+}
+
+.quiz-option-card.selected span, .quiz-option-card.selected label {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.quiz-option-card.selected .quiz-icon-badge {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
+  color: #091D17 !important;
+  border-color: #F5E59B !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.85) !important;
+}
+
+/* Pop-in bounce animation for selected check badge */
+@keyframes bounceInPop {
+  0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+  60% { transform: scale(1.25) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.animate-bounce-in {
+  animation: bounceInPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Result Card Glow Entrance Animation */
+@keyframes quizResultEntrance {
+  0% { opacity: 0; transform: translateY(30px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-quiz-result {
+  animation: quizResultEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* FAQ Accordion */
+.faq-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-body {
+  max-height: 300px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: var(--color-emerald-dark);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-gold);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-elevated);
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ====================================================
+   LUXURY CARD CONTAINER BACKGROUND TEXTURE
+==================================================== */
+.card-textured {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(249, 248, 243, 0.92) 100%), url('assets/images/bg_card_texture.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid var(--color-gold-border) !important;
+  box-shadow: 0 20px 45px rgba(9, 29, 23, 0.08) !important;
+  position: relative;
+}
+
+/* Glassmorphic Inner Items for Textured Containers */
+.card-textured .bg-sand-card,
+.card-textured input,
+.card-textured textarea,
+.card-textured select {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-sand-border) !important;
+}
+
+.card-textured input:focus,
+.card-textured textarea:focus,
+.card-textured select:focus {
+  background-color: #FFFFFF !important;
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Custom Scrollbar & Utility */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-emerald-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ====================================================
+   MOBILE VIEW OPTIMIZATIONS (< 640px)
+==================================================== */
+@media (max-width: 640px) {
+  /* Header & Navigation */
+  header .max-w-7xl {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Toast Notification positioning on small screens */
+  .toast-container {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .toast {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Modal responsiveness on mobile */
+  .modal-content {
+    max-height: 88vh;
+    padding: 1.25rem !important;
+    border-radius: 20px;
+  }
+
+  /* Gallery Grid items on 2-col mobile */
+  #galleryGridContainer {
+    gap: 0.75rem !important;
+  }
+
+  /* Prevent text clip in cards */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

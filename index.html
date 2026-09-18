@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aran Therapy Center | Exclusive Body Therapy & Massage for Gents</title>
+  <meta name="description" content="Aran Therapy Center (@aramntherapy) - Premium full body therapy, deep tissue massage, and somatic relaxation center exclusive for gents only.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: { bg: '#F9F8F3', card: '#F3F0E6', border: '#E2DDD0' },
+            emerald: { dark: '#091D17', deep: '#0D2C23', mid: '#144034', light: '#1D5445' },
+            gold: { DEFAULT: '#D4AF37', light: '#F3E5AB', dark: '#AA820A' },
+            slate: { text: '#1B2421', muted: '#4A5B55' }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-sand-bg text-slate-text font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 navbar-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Badge -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+        <img src="assets/images/logo.png" alt="Aran Therapy Center Logo" class="w-8 h-8 sm:w-11 sm:h-11 rounded-full object-cover border border-gold shadow-md flex-shrink-0">
+        <div class="leading-tight">
+          <span class="font-serif text-xs sm:text-2xl font-bold tracking-wider block gold-gradient-text whitespace-nowrap">ARAN THERAPY</span>
+          <span class="text-[8px] sm:text-[10px] font-bold text-gold uppercase tracking-wider block -mt-0.5 sm:-mt-1 whitespace-nowrap">Gents Exclusive</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="index.html" class="nav-link hover:text-gold transition-colors">Home</a>
+        <a href="about.html" class="nav-link hover:text-gold transition-colors">About Center</a>
+        <a href="services.html" class="nav-link hover:text-gold transition-colors">Therapy Services</a>
+        <a href="quiz.html" class="nav-link hover:text-gold transition-colors">Body Care Quiz</a>
+        <a href="gallery.html" class="nav-link hover:text-gold transition-colors">Gallery</a>
+        <a href="contact.html" class="nav-link hover:text-gold transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+        <a href="book.html" class="btn-header-cta" title="Book Therapy Session" aria-label="Book Therapy Session">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-dark icon-animate-sparkle"></i>
+          <span class="hidden sm:inline whitespace-nowrap">Book Therapy</span>
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden p-1.5 text-gold focus:outline-none" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobileNav" class="hidden md:hidden flex-col bg-emerald-dark text-white border-b border-gold/30 px-6 py-4 gap-4 text-sm font-medium">
+      <a href="index.html" class="py-2 hover:text-gold border-b border-white/10">Home</a>
+      <a href="about.html" class="py-2 hover:text-gold border-b border-white/10">About Center</a>
+      <a href="services.html" class="py-2 hover:text-gold border-b border-white/10">Therapy Services</a>
+      <a href="quiz.html" class="py-2 hover:text-gold border-b border-white/10">Body Care Quiz</a>
+      <a href="gallery.html" class="py-2 hover:text-gold border-b border-white/10">Instagram Feed</a>
+      <a href="contact.html" class="py-2 hover:text-gold border-b border-white/10">Contact</a>
+      <a href="book.html" class="py-2 text-gold font-bold">Book Therapy Session</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- HERO SECTION -->
+    <section class="relative pt-28 pb-24 md:pt-32 md:pb-32 bg-emerald-dark text-white overflow-hidden">
+      <div class="absolute inset-0 bg-radial-gradient from-emerald-mid/50 to-emerald-dark opacity-90 pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          
+          <div class="md:col-span-7 space-y-6 text-center md:text-left">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-emerald-deep/80 text-gold text-xs font-semibold tracking-widest uppercase shadow-lg">
+              <i data-lucide="shield-check" class="w-4 h-4 text-gold"></i>
+              <span>Exclusive For Gents Only</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif leading-[1.15] text-white">
+              Luxury <span class="gold-gradient-text">Body Therapy & Massage</span> Center for Men
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+              Experience therapeutic deep tissue massage, full body relaxation, and somatic tension relief designed specifically for men to restore vitality and physical well-being.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+              <a href="book.html" class="btn-gold px-8 py-3 text-base">
+                <span>Book Therapy Session</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="services.html" class="btn-primary border-gold/50 px-8 py-3 text-base">
+                <span>View Therapy Menu</span>
+              </a>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex items-center justify-center md:justify-start gap-6 text-xs font-semibold text-gold-light">
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold"></i> Certified Practitioners</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold"></i> Private Luxury Rooms</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold"></i> Gents Exclusive</span>
+            </div>
+
+          </div>
+
+          <!-- Hero 2 Circles: Outer Circle & Large Inner Bouncing Image Circle -->
+          <div class="md:col-span-5 flex items-center justify-center">
+            <div class="relative flex items-center justify-center">
+              
+              <!-- Outer Circle (Boundary) -->
+              <div id="outerCircle" class="w-[350px] h-[350px] sm:w-[440px] sm:h-[440px] md:w-[480px] md:h-[480px] rounded-full border-4 border-gold shadow-2xl bg-emerald-deep/90 relative flex items-center justify-center overflow-hidden">
+                
+                <!-- Decorative concentric inner gold rings -->
+                <div class="absolute inset-5 rounded-full border border-gold/15 pointer-events-none"></div>
+                <div class="absolute inset-12 rounded-full border border-gold/10 pointer-events-none"></div>
+
+                <!-- Inner Image Circle (Massage photo fills golden circle edge-to-edge) -->
+                <div id="innerCircle" class="absolute w-[290px] h-[290px] sm:w-[370px] sm:h-[370px] md:w-[400px] md:h-[400px] rounded-full border-4 border-gold shadow-2xl overflow-hidden cursor-pointer">
+                  <img src="assets/images/hero_massage.jpg" alt="Therapeutic Body Massage at Aran Therapy Center" class="w-full h-full object-cover scale-105">
+                </div>
+
+              </div>
+
+              <!-- Floating Gold Badge -->
+              <div class="absolute -bottom-4 right-2 bg-emerald-dark/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-gold/60 shadow-xl flex items-center gap-2 z-20">
+                <i data-lucide="sparkles" class="w-4 h-4 text-gold icon-animate-sparkle"></i>
+                <span class="text-xs font-bold text-gold-light">Professional Bodywork</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTED THERAPY SERVICES WITH IMAGES & WORKING ANIMATED ICONS -->
+    <section class="py-24 bg-sand-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-mid border-b-2 border-gold pb-1">Premium Offerings</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-slate-text">Specialized Body Therapy for Men</h2>
+          <p class="text-slate-muted text-sm">Tailored therapy sessions designed to eliminate deep muscle fatigue, stress, and joint stiffness.</p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-8">
+          
+          <!-- Service Card 1: Deep Tissue Therapy -->
+          <div class="bg-white rounded-2xl sm:rounded-3xl border border-sand-border card-hover overflow-hidden flex flex-col justify-between">
+            <div class="relative h-32 sm:h-48 overflow-hidden">
+              <img src="assets/images/service_deep_tissue.jpg" alt="Deep Tissue Therapy" class="w-full h-full object-cover hover:scale-108 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-4 w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-dark border border-gold text-gold flex items-center justify-center shadow-xl">
+                <i data-lucide="activity" class="w-4 h-4 sm:w-6 sm:h-6 icon-animate-pulse"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-grow flex flex-col justify-between text-center">
+              <div class="space-y-1 sm:space-y-2">
+                <h3 class="font-serif text-xs sm:text-xl font-bold text-slate-text leading-tight">Deep Tissue Therapy</h3>
+                <p class="text-[10px] sm:text-xs text-slate-muted leading-tight sm:leading-relaxed line-clamp-2">Targets chronic muscle knots, severe back tension, and posture fatigue with firm, therapeutic pressure.</p>
+              </div>
+              <div class="pt-2 sm:pt-3 border-t border-sand-border">
+                <a href="services.html" class="text-[10px] sm:text-xs font-bold text-emerald-dark hover:text-gold inline-flex items-center gap-1">
+                  <span>Explore Service</span>
+                  <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2: Swedish Relaxation -->
+          <div class="bg-white rounded-2xl sm:rounded-3xl border border-sand-border card-hover overflow-hidden flex flex-col justify-between">
+            <div class="relative h-32 sm:h-48 overflow-hidden">
+              <img src="assets/images/service_swedish.jpg" alt="Swedish Relaxation" class="w-full h-full object-cover hover:scale-108 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-4 w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-dark border border-gold text-gold flex items-center justify-center shadow-xl">
+                <i data-lucide="feather" class="w-4 h-4 sm:w-6 sm:h-6 icon-animate-feather"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-grow flex flex-col justify-between text-center">
+              <div class="space-y-1 sm:space-y-2">
+                <h3 class="font-serif text-xs sm:text-xl font-bold text-slate-text leading-tight">Swedish Relaxation</h3>
+                <p class="text-[10px] sm:text-xs text-slate-muted leading-tight sm:leading-relaxed line-clamp-2">Soothing full body Swedish oil massage to enhance circulation, ease stress, and quiet the nervous system.</p>
+              </div>
+              <div class="pt-2 sm:pt-3 border-t border-sand-border">
+                <a href="services.html" class="text-[10px] sm:text-xs font-bold text-emerald-dark hover:text-gold inline-flex items-center gap-1">
+                  <span>Explore Service</span>
+                  <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3: Somatic Muscle Recovery -->
+          <div class="bg-white rounded-2xl sm:rounded-3xl border border-sand-border card-hover overflow-hidden flex flex-col justify-between">
+            <div class="relative h-32 sm:h-48 overflow-hidden">
+              <img src="assets/images/service_somatic.jpg" alt="Somatic Muscle Recovery" class="w-full h-full object-cover hover:scale-108 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-4 w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-dark border border-gold text-gold flex items-center justify-center shadow-xl">
+                <i data-lucide="flame" class="w-4 h-4 sm:w-6 sm:h-6 icon-animate-flame"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-grow flex flex-col justify-between text-center">
+              <div class="space-y-1 sm:space-y-2">
+                <h3 class="font-serif text-xs sm:text-xl font-bold text-slate-text leading-tight">Somatic Muscle Recovery</h3>
+                <p class="text-[10px] sm:text-xs text-slate-muted leading-tight sm:leading-relaxed line-clamp-2">Combines hot stone thermal therapy and stretching to revive overworked muscles for active gents.</p>
+              </div>
+              <div class="pt-2 sm:pt-3 border-t border-sand-border">
+                <a href="services.html" class="text-[10px] sm:text-xs font-bold text-emerald-dark hover:text-gold inline-flex items-center gap-1">
+                  <span>Explore Service</span>
+                  <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 4: Body Care Assessment -->
+          <div class="bg-white rounded-2xl sm:rounded-3xl border border-sand-border card-hover overflow-hidden flex flex-col justify-between">
+            <div class="relative h-32 sm:h-48 overflow-hidden">
+              <img src="assets/images/service_assessment.jpg" alt="Body Care Assessment" class="w-full h-full object-cover hover:scale-108 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-2 sm:bottom-3 sm:left-4 w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-dark border border-gold text-gold flex items-center justify-center shadow-xl">
+                <i data-lucide="compass" class="w-4 h-4 sm:w-6 sm:h-6 icon-animate-compass"></i>
+              </div>
+            </div>
+            <div class="p-3 sm:p-6 space-y-2 sm:space-y-3 flex-grow flex flex-col justify-between text-center">
+              <div class="space-y-1 sm:space-y-2">
+                <h3 class="font-serif text-xs sm:text-xl font-bold text-slate-text leading-tight">Body Care Assessment</h3>
+                <p class="text-[10px] sm:text-xs text-slate-muted leading-tight sm:leading-relaxed line-clamp-2">Take our 3-step quiz to find the ideal massage and therapy duration for your specific body needs.</p>
+              </div>
+              <div class="pt-2 sm:pt-3 border-t border-sand-border">
+                <a href="quiz.html" class="text-[10px] sm:text-xs font-bold text-emerald-dark hover:text-gold inline-flex items-center gap-1">
+                  <span>Start Quiz</span>
+                  <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION BANNER -->
+    <section class="py-20 bg-emerald-dark text-white border-t border-gold/30">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span class="inline-block px-4 py-1 rounded-full gold-badge text-xs">Reserve Your Private Room</span>
+        <h2 class="text-3xl sm:text-5xl font-serif">Experience Pure Physical Renewal at Aran Therapy Center</h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">Book your appointment today. Exclusive for gents seeking premium therapy care.</p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="book.html" class="btn-gold px-8 py-3 text-base">Book Appointment Now</a>
+          <a href="contact.html" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full text-base font-semibold border border-gold/40 transition-all">Contact Studio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT REVIEWS & TESTIMONIALS AUTO-GLIDE CAROUSEL SECTION -->
+    <section id="reviews" class="py-24 bg-sand-card/70 border-t border-sand-border relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-dark text-gold border border-gold/40 text-xs font-bold shadow-md">
+            <div class="flex items-center text-gold">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+            </div>
+            <span>4.9 / 5.0 Rating • 180+ Verified Gents Reviews</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-serif text-slate-text">What Gents Say About Aran Therapy</h2>
+          <p class="text-slate-muted text-sm sm:text-base">Read honest feedback from gentlemen who trust our specialized deep tissue, Swedish relaxation, and somatic bodywork sessions.</p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div id="reviewsCarouselWrapper" class="relative px-2 sm:px-10">
+          
+          <!-- Navigation Arrow Left -->
+          <button id="reviewsPrevBtn" aria-label="Previous Review" class="absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-emerald-dark text-gold border border-gold/40 flex items-center justify-center shadow-xl hover:bg-gold hover:text-emerald-dark transition-all duration-300">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          </button>
+
+          <!-- Navigation Arrow Right -->
+          <button id="reviewsNextBtn" aria-label="Next Review" class="absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-emerald-dark text-gold border border-gold/40 flex items-center justify-center shadow-xl hover:bg-gold hover:text-emerald-dark transition-all duration-300">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </button>
+
+          <!-- Track Container -->
+          <div class="overflow-hidden rounded-3xl">
+            <div id="reviewsTrack" class="flex transition-transform duration-700 ease-in-out">
+              
+              <!-- Review Slide 1 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "The deep tissue therapy here is unmatched. After months of intense back tightness from long desk hours and workout strain, one 90-minute session completely restored my posture. The private gents-only setting provides true peace of mind."
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">Marcus V.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Deep Tissue Body Therapy</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Verified Client</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Slide 2 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "Aran Therapy Center is my go-to sanctuary. The hot stone muscle recovery combined with neck tension work melts away severe stress instantly. Extremely clean, professional male therapists, and luxurious atmosphere."
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">David K.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Somatic Hot Stone Recovery</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Regular Client</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Slide 3 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "Working 10 hours a day on a computer left me with constant neck tightness and headaches. The head and temple tension session was incredible. I walked out feeling light, energized, and completely pain-free."
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">Tariq M.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Head & Temple Relief</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Verified Client</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Slide 4 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "Exceptional Swedish oil massage. The warm essential oils and smooth gliding pressure completely quieted my mind and relieved deep physical fatigue. Sleeping like a baby since my session!"
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">Julian R.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Swedish Oil Body Massage</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Verified Client</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Slide 5 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "As someone with a demanding hospital work schedule, physical exhaustion builds up fast. The eucalyptus & cedarwood aromatherapy session restored my energy and eased joint stiffness."
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">Dr. Alex P.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Aromatherapy Restorative</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Regular Client</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Slide 6 -->
+              <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                <div class="bg-white p-8 rounded-3xl border border-sand-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 h-full">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-gold gap-1">
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                      <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-muted leading-relaxed italic">
+                      "Perfect 45-minute express session for busy days. The foot reflexology and leg tension relief worked wonders on my lower body tightness. Highest recommendation for active gents."
+                    </p>
+                  </div>
+                  <div class="pt-4 border-t border-sand-border flex items-center justify-between">
+                    <div>
+                      <h4 class="font-serif font-bold text-sm text-slate-text">Siddharth R.</h4>
+                      <p class="text-[11px] text-gold font-semibold">Executive Express Reflexology</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-dark/10 text-emerald-dark text-[10px] font-bold border border-emerald-dark/20">Verified Client</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Indicator Dots -->
+          <div id="reviewsDots" class="flex items-center justify-center gap-2 pt-6"></div>
+
+        </div>
+
+        <!-- Trust Highlights Banner -->
+        <div class="mt-6 pt-6 border-t border-sand-border/80">
+          <div class="max-w-4xl mx-auto bg-sand-card/70 rounded-2xl border border-gold/30 p-3.5 sm:p-5 shadow-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-text">
+              <div class="bg-white px-4 py-2.5 rounded-xl border border-sand-border/80 shadow-xs flex items-center justify-center gap-2.5 text-center">
+                <i data-lucide="shield-check" class="w-4 h-4 text-gold flex-shrink-0"></i>
+                <span class="whitespace-nowrap">100% Private Male Sanctuary</span>
+              </div>
+              <div class="bg-white px-4 py-2.5 rounded-xl border border-sand-border/80 shadow-xs flex items-center justify-center gap-2.5 text-center">
+                <i data-lucide="award" class="w-4 h-4 text-gold flex-shrink-0"></i>
+                <span class="whitespace-nowrap">Certified Male Therapists</span>
+              </div>
+              <div class="bg-white px-4 py-2.5 rounded-xl border border-sand-border/80 shadow-xs flex items-center justify-center gap-2.5 text-center">
+                <i data-lucide="thumbs-up" class="w-4 h-4 text-gold flex-shrink-0"></i>
+                <span class="whitespace-nowrap">99% Satisfaction Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER WITH ACCESSIBLE LEGAL LINKS -->
+  <footer class="bg-emerald-dark text-sand-card py-8 border-t border-gold/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="grid md:grid-cols-12 gap-6 items-center">
+        
+        <div class="md:col-span-5 space-y-2">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo.png" alt="Logo" class="w-9 h-9 rounded-full border border-gold">
+            <span class="font-serif text-xl font-bold gold-gradient-text">ARAN THERAPY CENTER</span>
+          </div>
+          <p class="text-xs text-slate-300 max-w-sm leading-relaxed">
+            Exclusive body therapy and full body relaxation center for gents. Restoring physical stamina, posture, and wellness.
+          </p>
+          <p class="text-xs text-gold">Follow on Instagram: <a href="https://www.instagram.com/aramntherapy" target="_blank" class="underline font-bold">@aramntherapy</a></p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gold">Quick Navigation</h4>
+          <ul class="grid grid-cols-2 gap-x-2 gap-y-1 text-[11px] text-slate-300">
+            <li><a href="index.html" class="hover:text-gold transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-gold transition-colors">About Center</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">Therapy Menu</a></li>
+            <li><a href="quiz.html" class="hover:text-gold transition-colors">Body Care Quiz</a></li>
+            <li><a href="gallery.html" class="hover:text-gold transition-colors">Instagram Feed</a></li>
+            <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+            <li><a href="book.html" class="hover:text-gold transition-colors">Book Session</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-2 bg-white/5 p-4 rounded-xl border border-gold/20">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center gap-1.5">
+            <i data-lucide="shield" class="w-4 h-4"></i> Gents Exclusive Guarantee
+          </h4>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Private, hygienic, and highly professional therapy suites managed by experienced male bodywork therapists.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+        <p>&copy; 2026 Aran Therapy Center (@aramntherapy). All rights reserved. Exclusive for Gents Only.</p>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-gold text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-gold text-slate-300 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
